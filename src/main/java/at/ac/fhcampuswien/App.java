@@ -51,8 +51,6 @@ public class App {
     //todo Task 3
     public void printPyramid(){
         // input your solution here
-        // WICHTIG Konstante mit 6 definieren.
-
         final int NumberOfLines = 6;
         StringBuilder StarString;
         char space = ' ';
@@ -70,12 +68,46 @@ public class App {
             }
             System.out.println(StarString);
         }
-
     }
 
     //todo Task 4
     public void printRhombus(){
         // input your solution here
+        // Allgemeine Gedanken zur Übung :
+            // Ich mache alles in einer Schleife.
+                // Die Schleife beginnt bei 1 und die Laufbedingung ist, dass die Zahl größer 0 ist.
+                // Was ist das obere Ende?
+                    // Der (Eingabewert in INT : 2) + 1.
+                        // Mit einer If- Bedingung frage ich ab, ob das erreicht wurde und setzte eine Boolean.
+                // Die Boolean, welche gesetzt wird, wird am Ende der Schleife abgefragt
+                    // Wenn diese $true ist, dann ziehe ich von der Laufvariable 2 ab.
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("h:");
+        int rhombusheight = scanner.nextInt();
+        //if
+
+
+
+        // Zwischenaufgabe : Flippen der Pyramide :
+            final int NumberOfLines = 11;
+            StringBuilder StarString;
+            char space = ' ';
+            char star = '*';
+            // Die Anzahl der Leerzeichen wird mit jeder Zeile um eines Weniger.
+            // Die Sterne werden mit jeder Zeile um 2 mehr.
+            for(int i=1 ; i<=NumberOfLines ; i++){
+                StarString = new StringBuilder();
+                // Es wird 1 zu j dazu addiert, weil i mit 1 startet.
+                for (int j = 5 - i + 1 ; j > 0; j--){
+                    StarString.append(space);
+                }
+                for (int k = 0 ; k < 2*i -1 ; k++){
+                    StarString.append(star);
+                }
+                System.out.println(StarString);
+            }
+
+
     }
 
     //todo Task 5
