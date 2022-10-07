@@ -11,20 +11,22 @@ public class App {
         System.out.print("Number 1: ");
         double MaxNumber = scanner.nextDouble();
         double Number;
+
         if(MaxNumber <= 0){
             System.out.println("No number entered.");
-        } else {
-            int i=2;
-            do {
-                System.out.print("Number " + i + ": ");
-                Number = scanner.nextDouble();
-                if (Number > 0){
-                    if(Number > MaxNumber) MaxNumber = Number;
-                    i++;
-                }
-            } while (Number > 0);
-            System.out.println("The largest number is " + String.format("%.2f",MaxNumber));
+            return;
         }
+
+        int i=2;
+        do {
+            System.out.print("Number " + i + ": ");
+            Number = scanner.nextDouble();
+            if (Number > 0){
+                if(Number > MaxNumber) MaxNumber = Number;
+                i++;
+            }
+        } while (Number > 0);
+        System.out.println("The largest number is " + String.format("%.2f",MaxNumber));
     }
 
     //todo Task 2
@@ -49,6 +51,25 @@ public class App {
     //todo Task 3
     public void printPyramid(){
         // input your solution here
+        // WICHTIG Konstante mit 6 definieren.
+
+        final int NumberOfLines = 6;
+        StringBuilder StarString;
+        char space = ' ';
+        char star = '*';
+        // Die Anzahl der Leerzeichen wird mit jeder Zeile um eines Weniger.
+        // Die Sterne werden mit jeder Zeile um 2 mehr.
+        for(int i=1 ; i<=NumberOfLines ; i++){
+            StarString = new StringBuilder();
+            // Es wird 1 zu j dazu addiert, weil i mit 1 startet.
+            for (int j = 5 - i + 1 ; j > 0; j--){
+                StarString.append(space);
+            }
+            for (int k = 0 ; k < 2*i -1 ; k++){
+                StarString.append(star);
+            }
+            System.out.println(StarString);
+        }
 
     }
 
@@ -73,19 +94,19 @@ public class App {
         //System.out.println("Task 1: Largest Number");
         //exercise2.largestNumber();
 
-        System.out.println("\nTask 2: Stairs");
-        exercise2.stairs();
+        //System.out.println("\nTask 2: Stairs");
+        //exercise2.stairs();
 
-        /*System.out.println("\nTask 3: Pyramide");
+        System.out.println("\nTask 3: Pyramide");
         exercise2.printPyramid();
 
-        System.out.println("\nTask 4: Raute");
-        exercise2.printRhombus();
+        //System.out.println("\nTask 4: Raute");
+        //exercise2.printRhombus();
 
-        System.out.println("\nTask 5: Notendurchschnitt");
-        exercise2.marks();
+        //System.out.println("\nTask 5: Notendurchschnitt");
+        //exercise2.marks();
 
-        System.out.println("\nTask 6: Fröhliche Zahlen");
-        exercise2.happyNumbers();*/
+        //System.out.println("\nTask 6: Fröhliche Zahlen");
+        //exercise2.happyNumbers();*/
     }
 }
